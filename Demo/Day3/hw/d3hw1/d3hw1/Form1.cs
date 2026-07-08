@@ -73,12 +73,18 @@ namespace d3hw1
                 string line = item.ToString();
 
                 string[] words = line.Split(' ');
-                
+
+
                 foreach (var word in words)
                 {
-                    foreach (DictionaryEntry d in wordCounts)
+                    if (wordCounts.ContainsKey(word))
                     {
-
+                        wordCounts[word]++;
+                    }
+                    else
+                    {
+                        wordCounts.Add(word, 1);
+                        listBox2.Items.Add(word + "\t" + wordCounts[word]);
                     }
                 }
             }
