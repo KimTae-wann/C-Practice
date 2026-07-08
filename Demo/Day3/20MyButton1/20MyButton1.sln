@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.37327.17
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20MyButton1", "20MyButton1\20MyButton1.csproj", "{5814152C-9B14-4A9F-8A78-857BA8FA12CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseMyButton1", "UseMyButton1\UseMyButton1.csproj", "{65090F8C-60EB-4EA3-B8FD-C065D0873475}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5814152C-9B14-4A9F-8A78-857BA8FA12CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5814152C-9B14-4A9F-8A78-857BA8FA12CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5814152C-9B14-4A9F-8A78-857BA8FA12CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5814152C-9B14-4A9F-8A78-857BA8FA12CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65090F8C-60EB-4EA3-B8FD-C065D0873475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65090F8C-60EB-4EA3-B8FD-C065D0873475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65090F8C-60EB-4EA3-B8FD-C065D0873475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65090F8C-60EB-4EA3-B8FD-C065D0873475}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F016BC92-2649-4125-A266-6B013F361109}
+	EndGlobalSection
+EndGlobal

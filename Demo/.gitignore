@@ -1,0 +1,36 @@
+## =======================================================
+## C#/.NET Visual Studio - Day별 하위 폴더 구조용 .gitignore
+## =======================================================
+
+# 모든 하위 폴더의 bin 및 obj 폴더(빌드 결과물) 통째로 제외
+**/[Bb]in/
+**/[Oo]bj/
+
+# Visual Studio가 생성하는 숨겨진 설정 폴더 무조건 제외
+**/.vs/
+
+# 컴파일 결과물 및 테스트 관련 임시 파일 제외
+**/[Dd]ebug/
+**/[Rr]elease/
+**/x64/
+**/x86/
+
+# Visual Studio 유저별 개인 설정 파일 (.suo, .user 등)
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# NuGet 패키지 폴더 제외 (패키지 세팅 파일만 추적하도록)
+**/packages/
+*.nuget.props
+*.nuget.targets
+
+# 빌드 시 생성되는 로그 및 디버깅 파일 제외
+*.log
+*.pdb
+*.ilk
+
+# 윈도우 OS가 자동 생성하는 폴더 아이콘 캐시 파일
+Thumbs.db
+Desktop.ini

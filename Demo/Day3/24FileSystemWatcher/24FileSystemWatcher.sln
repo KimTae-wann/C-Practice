@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.37327.17
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "24FileSystemWatcher", "24FileSystemWatcher\24FileSystemWatcher.csproj", "{E7949A39-5BFF-42C5-AD09-76ECCDCA3539}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7949A39-5BFF-42C5-AD09-76ECCDCA3539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7949A39-5BFF-42C5-AD09-76ECCDCA3539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7949A39-5BFF-42C5-AD09-76ECCDCA3539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7949A39-5BFF-42C5-AD09-76ECCDCA3539}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D67804E2-2B0A-41B0-8C86-44F8EE8DB148}
+	EndGlobalSection
+EndGlobal

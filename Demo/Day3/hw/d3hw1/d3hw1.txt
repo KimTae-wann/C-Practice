@@ -1,0 +1,6 @@
+this is a test file.
+hello
+good bye
+hello world
+this is a test
+good
