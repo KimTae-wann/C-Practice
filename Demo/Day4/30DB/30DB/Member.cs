@@ -32,9 +32,20 @@ namespace _30DB
 
 
         // TODO 
-        public int Insert ()
+        public int Insert (string userId, string password, string name, string email)
         {
-            return 0;
+            con.Open();
+            SqlCommand command = new SqlCommand
+                ("INSERT INTO MEMBER (USERID, PASSWORD, NAME, EMAIL) VALUES (@p1, @p2, @p3, @p4)", con);
+            command.Parameters.AddWithValue("@p1", userId);
+            command.Parameters.AddWithValue("@p2", password);
+            command.Parameters.AddWithValue("@p3", name);
+            command.Parameters.AddWithValue("@p4", email);
+
+            int r = command.ExecuteNonQuery();
+            con.Close();
+
+            return r;
         }
          
         public int Update(int id, string userId, string password, string name, string email)

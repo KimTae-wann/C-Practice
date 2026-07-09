@@ -62,7 +62,7 @@ namespace _30DB
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(505, 312);
+            this.dataGridView1.Size = new System.Drawing.Size(621, 371);
             this.dataGridView1.TabIndex = 1;
             // 
             // listBox1
@@ -71,16 +71,16 @@ namespace _30DB
             this.listBox1.ItemHeight = 12;
             this.listBox1.Location = new System.Drawing.Point(40, 85);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(155, 148);
+            this.listBox1.Size = new System.Drawing.Size(155, 172);
             this.listBox1.TabIndex = 2;
             // 
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 12;
-            this.listBox2.Location = new System.Drawing.Point(40, 259);
+            this.listBox2.Location = new System.Drawing.Point(40, 284);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(155, 136);
+            this.listBox2.Size = new System.Drawing.Size(155, 172);
             this.listBox2.TabIndex = 3;
             // 
             // button2
@@ -106,7 +106,7 @@ namespace _30DB
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(736, 9);
+            this.label1.Location = new System.Drawing.Point(828, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 12);
             this.label1.TabIndex = 6;
@@ -124,7 +124,7 @@ namespace _30DB
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(411, 36);
+            this.button5.Location = new System.Drawing.Point(431, 36);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 8;
@@ -134,7 +134,7 @@ namespace _30DB
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(666, 24);
+            this.button6.Location = new System.Drawing.Point(712, 24);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 9;
@@ -144,7 +144,7 @@ namespace _30DB
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(666, 56);
+            this.button7.Location = new System.Drawing.Point(712, 56);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 10;
@@ -154,17 +154,17 @@ namespace _30DB
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(502, 36);
+            this.button8.Location = new System.Drawing.Point(522, 36);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 11;
-            this.button8.Text = "추가 과제";
+            this.button8.Text = "과제: 추가";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(583, 36);
+            this.button9.Location = new System.Drawing.Point(617, 35);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 12;
@@ -176,7 +176,7 @@ namespace _30DB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(982, 591);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);

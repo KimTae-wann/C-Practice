@@ -163,7 +163,11 @@ namespace _30DB
         // TODO : Insert
         private void button8_Click(object sender, EventArgs e)
         {
-
+            AddMemberDlg dlg = new AddMemberDlg();
+            if (dlg.ShowDialog() == DialogResult.OK) // 추가한 경우
+            {
+                button5.PerformClick(); // 다시 조회
+            }
         }
         private void button9_Click(object sender, EventArgs e)
         {
