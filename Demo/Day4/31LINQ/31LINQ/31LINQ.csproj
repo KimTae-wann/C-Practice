@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0ABFF7F3-D232-4F37-9FAA-48F37592DA0B}</ProjectGuid>
+    <ProjectGuid>{8B175CCF-20FD-417C-BF0F-C0EAEA7FE315}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>_29MyEditor</RootNamespace>
-    <AssemblyName>29MyEditor</AssemblyName>
+    <RootNamespace>_31LINQ</RootNamespace>
+    <AssemblyName>31LINQ</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,12 +54,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserDlg.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserDlg.Designer.cs">
-      <DependentUpon>UserDlg.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -72,9 +66,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserDlg.resx">
-      <DependentUpon>UserDlg.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

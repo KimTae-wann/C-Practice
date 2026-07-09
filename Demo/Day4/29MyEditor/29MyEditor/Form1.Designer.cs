@@ -67,6 +67,8 @@ namespace _29MyEditor
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.폰트ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.사용자대화상자ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -267,8 +269,11 @@ namespace _29MyEditor
             // 
             // 옵션ToolStripMenuItem
             // 
+            this.옵션ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.폰트ToolStripMenuItem,
+            this.사용자대화상자ToolStripMenuItem});
             this.옵션ToolStripMenuItem.Name = "옵션ToolStripMenuItem";
-            this.옵션ToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            this.옵션ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.옵션ToolStripMenuItem.Text = "옵션";
             // 
             // toolStrip1
@@ -390,6 +395,20 @@ namespace _29MyEditor
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(785, 17);
             this.toolStripStatusLabel1.Spring = true;
             // 
+            // 폰트ToolStripMenuItem
+            // 
+            this.폰트ToolStripMenuItem.Name = "폰트ToolStripMenuItem";
+            this.폰트ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.폰트ToolStripMenuItem.Text = "폰트...";
+            this.폰트ToolStripMenuItem.Click += new System.EventHandler(this.폰트ToolStripMenuItem_Click);
+            // 
+            // 사용자대화상자ToolStripMenuItem
+            // 
+            this.사용자대화상자ToolStripMenuItem.Name = "사용자대화상자ToolStripMenuItem";
+            this.사용자대화상자ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.사용자대화상자ToolStripMenuItem.Text = "사용자 대화상자...";
+            this.사용자대화상자ToolStripMenuItem.Click += new System.EventHandler(this.사용자대화상자ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -453,6 +472,8 @@ namespace _29MyEditor
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripMenuItem 폰트ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 사용자대화상자ToolStripMenuItem;
     }
 }
 

@@ -1,0 +1,13 @@
+﻿CREATE PROCEDURE [dbo].[uspDeleteByID]
+	@id int
+AS
+	DELETE
+	  FROM MEMBER
+	 WHERE ID=@ID
+RETURN 0
+
+CREATE PROCEDURE [dbo].[uspSelectALL]
+AS
+	SELECT *
+	  FROM MEMBER
+RETURN 0
