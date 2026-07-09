@@ -36,7 +36,7 @@ namespace _30DB
         {
             return 0;
         }
-
+         
         public int Update(int id, string userId, string password, string name, string email)
         {
             con.Open();
