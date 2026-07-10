@@ -41,8 +41,8 @@ namespace d1hw1
             {
                 case 10:
                 case 9:
-                    grade = "A";
-                    break;
+                    /*grade = "A";
+                    break;*/
                 case 8:
                     grade = "B";
                     break;

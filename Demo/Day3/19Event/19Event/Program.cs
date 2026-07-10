@@ -13,6 +13,7 @@ namespace _19Event
         public string Message {get; set;}
         // ...
     }
+    // Publisher
     class Button
     {
         public event EventHandler Click; // 2. 이벤트 정의
