@@ -12,7 +12,7 @@ using System.Configuration;
 namespace Board
 {
     //DAC(Data Access Component) : DB 연결 전담
-    class Member
+    /*class Member
     {
         private SqlConnection con = new SqlConnection();
         public Member()
@@ -64,5 +64,5 @@ namespace Board
             con.Close();
             return r;
         }
-    }
+    }*/
 }
