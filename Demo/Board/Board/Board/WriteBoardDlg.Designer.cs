@@ -1,7 +1,7 @@
 ﻿
 namespace Board
 {
-    partial class UpdateBoardDlg
+    partial class WriteBoardDlg
     {
         /// <summary>
         /// Required designer variable.
@@ -34,13 +34,11 @@ namespace Board
             this.emailLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.readCountLabel = new System.Windows.Forms.Label();
-            this.inputReadCountLabel = new System.Windows.Forms.Label();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.iDateLabel = new System.Windows.Forms.Label();
-            this.updateButton = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
             this.contentTextBox = new System.Windows.Forms.TextBox();
             this.closeButton = new System.Windows.Forms.Button();
             this.idLabel = new System.Windows.Forms.Label();
@@ -88,18 +86,8 @@ namespace Board
             this.readCountLabel.AutoSize = true;
             this.readCountLabel.Location = new System.Drawing.Point(550, 107);
             this.readCountLabel.Name = "readCountLabel";
-            this.readCountLabel.Size = new System.Drawing.Size(53, 12);
+            this.readCountLabel.Size = new System.Drawing.Size(0, 12);
             this.readCountLabel.TabIndex = 4;
-            this.readCountLabel.Text = "[조회수]";
-            // 
-            // inputReadCountLabel
-            // 
-            this.inputReadCountLabel.AutoSize = true;
-            this.inputReadCountLabel.Location = new System.Drawing.Point(732, 107);
-            this.inputReadCountLabel.Name = "inputReadCountLabel";
-            this.inputReadCountLabel.Size = new System.Drawing.Size(41, 12);
-            this.inputReadCountLabel.TabIndex = 5;
-            this.inputReadCountLabel.Text = "조회수";
             // 
             // titleTextBox
             // 
@@ -114,7 +102,6 @@ namespace Board
             // 
             this.nameTextBox.Location = new System.Drawing.Point(74, 77);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.ReadOnly = true;
             this.nameTextBox.Size = new System.Drawing.Size(240, 21);
             this.nameTextBox.TabIndex = 7;
             // 
@@ -122,7 +109,6 @@ namespace Board
             // 
             this.emailTextBox.Location = new System.Drawing.Point(74, 104);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.ReadOnly = true;
             this.emailTextBox.Size = new System.Drawing.Size(240, 21);
             this.emailTextBox.TabIndex = 8;
             // 
@@ -133,24 +119,15 @@ namespace Board
             this.passwordTextBox.Size = new System.Drawing.Size(304, 21);
             this.passwordTextBox.TabIndex = 9;
             // 
-            // iDateLabel
+            // addButton
             // 
-            this.iDateLabel.AutoSize = true;
-            this.iDateLabel.Location = new System.Drawing.Point(12, 391);
-            this.iDateLabel.Name = "iDateLabel";
-            this.iDateLabel.Size = new System.Drawing.Size(53, 12);
-            this.iDateLabel.TabIndex = 10;
-            this.iDateLabel.Text = "등록시간";
-            // 
-            // updateButton
-            // 
-            this.updateButton.Location = new System.Drawing.Point(561, 391);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(103, 47);
-            this.updateButton.TabIndex = 11;
-            this.updateButton.Text = "수정";
-            this.updateButton.UseVisualStyleBackColor = true;
-            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            this.addButton.Location = new System.Drawing.Point(561, 391);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(103, 47);
+            this.addButton.TabIndex = 11;
+            this.addButton.Text = "추가";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // contentTextBox
             // 
@@ -179,7 +156,7 @@ namespace Board
             this.idLabel.TabIndex = 15;
             this.idLabel.Visible = false;
             // 
-            // UpdateBoardDlg
+            // WriteBoardDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -187,21 +164,18 @@ namespace Board
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.contentTextBox);
-            this.Controls.Add(this.updateButton);
-            this.Controls.Add(this.iDateLabel);
+            this.Controls.Add(this.addButton);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.titleTextBox);
-            this.Controls.Add(this.inputReadCountLabel);
             this.Controls.Add(this.readCountLabel);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.titleLabel);
-            this.Name = "UpdateBoardDlg";
+            this.Name = "WriteBoardDlg";
             this.Text = "UpdateBoardDlg";
-            this.Load += new System.EventHandler(this.UpdateBoardDlg_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,13 +188,11 @@ namespace Board
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Label readCountLabel;
-        private System.Windows.Forms.Label inputReadCountLabel;
         private System.Windows.Forms.TextBox titleTextBox;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
-        private System.Windows.Forms.Label iDateLabel;
-        private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.TextBox contentTextBox;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Label idLabel;
