@@ -48,6 +48,21 @@ namespace Board
                 return;
             }
 
+            if (UserSession.CurrentUser == null)
+            {
+                MessageBox.Show("로그인하지 않은 사용자는 수정권한이 없습니다.", "권한 없음");
+                return ;
+            }
+            else
+            {
+                if (!(UserSession.CurrentUser.Name.Equals(nameTextBox.Text) &&
+                    UserSession.CurrentUser.Email.Equals(emailTextBox.Text)))
+                {
+                    MessageBox.Show("해당 글을 수정할 권한이 없습니다.", "권한 없음");
+                    return;
+                }
+            }
+
             BoardVO updatePost = new BoardVO()
             {
                 Id = this.boardID,

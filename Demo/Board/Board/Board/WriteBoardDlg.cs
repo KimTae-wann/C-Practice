@@ -16,6 +16,8 @@ namespace Board
         public WriteBoardDlg()
         {
             InitializeComponent();
+            nameTextBox.Text = UserSession.CurrentUser.Name;
+            emailTextBox.Text = UserSession.CurrentUser.Email;
         }
 
         private void addButton_Click(object sender, EventArgs e)

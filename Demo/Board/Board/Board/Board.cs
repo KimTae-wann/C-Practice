@@ -23,35 +23,6 @@ namespace Board
             RefreshBoardList();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0) return;
-
-            var row = dataGridView1.Rows[e.RowIndex];
-            string idStr = row.Cells["id"].Value?.ToString() ?? "";
-
-            if (int.TryParse(idStr, out int id))
-            {
-                BoardVO board = dac.SelectOne(id);
-
-                if (board != null)
-                {
-                    UpdateBoardDlg detailForm = new UpdateBoardDlg(
-                        board.Id.ToString(),
-                        board.Title,
-                        board.Name,
-                        board.Email,
-                        board.ReadCount.ToString(),
-                        board.Content,
-                        board.IDate.ToString()
-                    );
-
-                    detailForm.ShowDialog();
-                    RefreshBoardList();
-                }
-            }
-        }
-
         private void RefreshBoardList()
         {
             if (UserSession.CurrentUser != null)
@@ -91,23 +62,45 @@ namespace Board
 
         private void 추가ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WriteBoardDlg writeForm = new WriteBoardDlg();
+            if (UserSession.CurrentUser == null)
+            {
+                MessageBox.Show("로그인을 먼저 해주세요.", "권한 없음");
+                return;
+            }
+            else
+            {
+                WriteBoardDlg writeForm = new WriteBoardDlg();
 
-            writeForm.ShowDialog();
-            RefreshBoardList();
+                writeForm.ShowDialog();
+                RefreshBoardList();
+            }
         }
 
         private void 삭제ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (UserSession.CurrentUser == null)
+            {
+                MessageBox.Show("로그인을 먼저 해주세요.", "권한 없음");
+                return;
+            }
+
             if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.Index < 0)
             {
                 MessageBox.Show("삭제할 행을 선택해 주세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+
             var selectedRow = dataGridView1.CurrentRow;
             string idStr = selectedRow.Cells["id"].Value?.ToString() ?? "";
             string title = selectedRow.Cells["title"].Value?.ToString() ?? "";
+            
+            bool isMine = dac.SelfCheck(idStr);
+            if (!isMine)
+            {
+                MessageBox.Show("해당 공지사항을 삭제할 권한이 없습니다", "권한없음");
+                return;
+            }
 
             if (!int.TryParse(idStr, out int id)) return;
 
@@ -144,7 +137,7 @@ namespace Board
         }
         private void 종료ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void 회원가입ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -165,6 +158,35 @@ namespace Board
             MessageBox.Show($"{UserSession.CurrentUser.Name}님 로그아웃합니다.");
             UserSession.Logout();
             RefreshBoardList();
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            var row = dataGridView1.Rows[e.RowIndex];
+            string idStr = row.Cells["id"].Value?.ToString() ?? "";
+
+            if (int.TryParse(idStr, out int id))
+            {
+                BoardVO board = dac.SelectOne(id);
+
+                if (board != null)
+                {
+                    UpdateBoardDlg detailForm = new UpdateBoardDlg(
+                        board.Id.ToString(),
+                        board.Title,
+                        board.Name,
+                        board.Email,
+                        board.ReadCount.ToString(),
+                        board.Content,
+                        board.IDate.ToString()
+                    );
+
+                    detailForm.ShowDialog();
+                    RefreshBoardList();
+                }
+            }
         }
     }
 }

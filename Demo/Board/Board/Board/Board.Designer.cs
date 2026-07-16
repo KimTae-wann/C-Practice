@@ -36,6 +36,9 @@ namespace Board
             this.추가ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.삭제ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.회원가입ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.로그인ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.로그아웃ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.열기ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.복사ToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -47,9 +50,6 @@ namespace Board
             this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.readCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.회원가입ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.로그인ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.로그아웃ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -82,30 +82,51 @@ namespace Board
             // 보기ToolStripMenuItem
             // 
             this.보기ToolStripMenuItem.Name = "보기ToolStripMenuItem";
-            this.보기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.보기ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.보기ToolStripMenuItem.Text = "보기";
             this.보기ToolStripMenuItem.Click += new System.EventHandler(this.보기ToolStripMenuItem_Click);
             // 
             // 추가ToolStripMenuItem
             // 
             this.추가ToolStripMenuItem.Name = "추가ToolStripMenuItem";
-            this.추가ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.추가ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.추가ToolStripMenuItem.Text = "추가";
             this.추가ToolStripMenuItem.Click += new System.EventHandler(this.추가ToolStripMenuItem_Click);
             // 
             // 삭제ToolStripMenuItem
             // 
             this.삭제ToolStripMenuItem.Name = "삭제ToolStripMenuItem";
-            this.삭제ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.삭제ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.삭제ToolStripMenuItem.Text = "삭제";
             this.삭제ToolStripMenuItem.Click += new System.EventHandler(this.삭제ToolStripMenuItem_Click);
             // 
             // 종료ToolStripMenuItem
             // 
             this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
-            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.종료ToolStripMenuItem.Text = "종료";
             this.종료ToolStripMenuItem.Click += new System.EventHandler(this.종료ToolStripMenuItem_Click);
+            // 
+            // 회원가입ToolStripMenuItem
+            // 
+            this.회원가입ToolStripMenuItem.Name = "회원가입ToolStripMenuItem";
+            this.회원가입ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.회원가입ToolStripMenuItem.Text = "회원가입";
+            this.회원가입ToolStripMenuItem.Click += new System.EventHandler(this.회원가입ToolStripMenuItem_Click);
+            // 
+            // 로그인ToolStripMenuItem
+            // 
+            this.로그인ToolStripMenuItem.Name = "로그인ToolStripMenuItem";
+            this.로그인ToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.로그인ToolStripMenuItem.Text = "로그인";
+            this.로그인ToolStripMenuItem.Click += new System.EventHandler(this.로그인ToolStripMenuItem_Click);
+            // 
+            // 로그아웃ToolStripMenuItem
+            // 
+            this.로그아웃ToolStripMenuItem.Name = "로그아웃ToolStripMenuItem";
+            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.로그아웃ToolStripMenuItem.Text = "로그아웃";
+            this.로그아웃ToolStripMenuItem.Click += new System.EventHandler(this.로그아웃ToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -177,19 +198,21 @@ namespace Board
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(788, 362);
             this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // id
             // 
             this.id.DataPropertyName = "id";
             this.id.HeaderText = "번호";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             // 
             // title
             // 
             this.title.DataPropertyName = "title";
             this.title.HeaderText = "제목";
             this.title.Name = "title";
+            this.title.ReadOnly = true;
             this.title.Width = 400;
             // 
             // name
@@ -197,6 +220,7 @@ namespace Board
             this.name.DataPropertyName = "name";
             this.name.HeaderText = "작성자";
             this.name.Name = "name";
+            this.name.ReadOnly = true;
             this.name.Width = 170;
             // 
             // readCount
@@ -204,27 +228,7 @@ namespace Board
             this.readCount.DataPropertyName = "readCount";
             this.readCount.HeaderText = "조회수";
             this.readCount.Name = "readCount";
-            // 
-            // 회원가입ToolStripMenuItem
-            // 
-            this.회원가입ToolStripMenuItem.Name = "회원가입ToolStripMenuItem";
-            this.회원가입ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.회원가입ToolStripMenuItem.Text = "회원가입";
-            this.회원가입ToolStripMenuItem.Click += new System.EventHandler(this.회원가입ToolStripMenuItem_Click);
-            // 
-            // 로그인ToolStripMenuItem
-            // 
-            this.로그인ToolStripMenuItem.Name = "로그인ToolStripMenuItem";
-            this.로그인ToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.로그인ToolStripMenuItem.Text = "로그인";
-            this.로그인ToolStripMenuItem.Click += new System.EventHandler(this.로그인ToolStripMenuItem_Click);
-            // 
-            // 로그아웃ToolStripMenuItem
-            // 
-            this.로그아웃ToolStripMenuItem.Name = "로그아웃ToolStripMenuItem";
-            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.로그아웃ToolStripMenuItem.Text = "로그아웃";
-            this.로그아웃ToolStripMenuItem.Click += new System.EventHandler(this.로그아웃ToolStripMenuItem_Click);
+            this.readCount.ReadOnly = true;
             // 
             // Board
             // 

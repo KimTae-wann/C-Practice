@@ -122,5 +122,24 @@ namespace Board
                 return rowsAffected > 0;
             }
         }
+
+        public bool SelfCheck(string id)
+        {
+            using (SqlConnection con = new SqlConnection(connStr))
+            using (SqlCommand cmd = new SqlCommand("dbo.SelfCheck", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@id", id);
+
+                con.Open();
+                string userId = cmd.ExecuteScalar().ToString();
+                if (UserSession.CurrentUser.UserId.Equals(userId))
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
     }
 }
