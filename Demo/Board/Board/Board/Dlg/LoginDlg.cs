@@ -27,6 +27,7 @@ namespace Board
                 string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("아이디, 비밀번호를 모두 입력해주세요.");
+                return;
             }
 
             if (userIDTextBox.Text.Length > 20)
