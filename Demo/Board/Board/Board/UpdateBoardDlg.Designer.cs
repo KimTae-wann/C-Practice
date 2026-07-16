@@ -112,6 +112,8 @@ namespace Board
             // 
             // nameTextBox
             // 
+            this.nameTextBox.Cursor = System.Windows.Forms.Cursors.No;
+            this.nameTextBox.Enabled = false;
             this.nameTextBox.Location = new System.Drawing.Point(74, 77);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.ReadOnly = true;
@@ -120,6 +122,7 @@ namespace Board
             // 
             // emailTextBox
             // 
+            this.emailTextBox.Enabled = false;
             this.emailTextBox.Location = new System.Drawing.Point(74, 104);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.ReadOnly = true;
@@ -130,6 +133,7 @@ namespace Board
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(469, 77);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(304, 21);
             this.passwordTextBox.TabIndex = 9;
             // 
@@ -200,7 +204,7 @@ namespace Board
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.titleLabel);
             this.Name = "UpdateBoardDlg";
-            this.Text = "UpdateBoardDlg";
+            this.Text = "상세화면";
             this.Load += new System.EventHandler(this.UpdateBoardDlg_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

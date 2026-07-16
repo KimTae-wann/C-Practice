@@ -52,7 +52,52 @@ namespace Board
             }
         }
 
-        private void deleteButton_Click(object sender, EventArgs e)
+        private void RefreshBoardList()
+        {
+            if (UserSession.CurrentUser != null)
+            {
+                로그인ToolStripMenuItem.Visible = false;
+                로그아웃ToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                로그인ToolStripMenuItem.Visible = true;
+                로그아웃ToolStripMenuItem.Visible = false;
+            }
+            int savedRowIndex = -1;
+            if (dataGridView1.CurrentRow != null && dataGridView1.CurrentRow.Index >= 0)
+            {
+                savedRowIndex = dataGridView1.CurrentRow.Index;
+            }
+
+            DataSet ds = dac.SelectAllBoards();
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = ds.Tables[0];
+
+            if (savedRowIndex >= 0 && savedRowIndex < dataGridView1.Rows.Count)
+            {
+                dataGridView1.ClearSelection();
+
+                dataGridView1.CurrentCell = dataGridView1.Rows[savedRowIndex].Cells[0];
+                dataGridView1.Rows[savedRowIndex].Selected = true;
+            }
+
+        }
+
+        private void 보기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RefreshBoardList();
+        }
+
+        private void 추가ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WriteBoardDlg writeForm = new WriteBoardDlg();
+
+            writeForm.ShowDialog();
+            RefreshBoardList();
+        }
+
+        private void 삭제ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.Index < 0)
             {
@@ -97,21 +142,29 @@ namespace Board
                 }
             }
         }
-
-        private void addButton_Click(object sender, EventArgs e)
+        private void 종료ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WriteBoardDlg writeForm = new WriteBoardDlg();
 
-            writeForm.ShowDialog();
+        }
+
+        private void 회원가입ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            registerDlg dlg = new registerDlg();
+            dlg.ShowDialog();
+        }
+
+        private void 로그인ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            loginDlg dlg = new loginDlg();
+            dlg.ShowDialog();
             RefreshBoardList();
         }
 
-
-        private void RefreshBoardList()
+        private void 로그아웃ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataSet ds = dac.SelectAll();
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataSource = ds.Tables[0];
+            MessageBox.Show($"{UserSession.CurrentUser.Name}님 로그아웃합니다.");
+            UserSession.Logout();
+            RefreshBoardList();
         }
     }
 }

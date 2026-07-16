@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -10,18 +11,21 @@ namespace Board
 {
     class BoardDAC
     {
-        private readonly string connStr = @"data source=(localdb)\MSSQLLocalDB;initial catalog=NETBoard;integrated security=true";
+        private readonly string connStr;
 
-        public DataSet SelectAll()
+        public BoardDAC()
+        {
+            connStr = ConfigurationManager.ConnectionStrings["MyBoard"].ConnectionString;
+        }
+        public DataSet SelectAllBoards()
         {
             using (SqlConnection con = new SqlConnection(connStr))
+            using (SqlCommand cmd = new SqlCommand("dbo.UP_SelectAllBoards", con))
             {
-                //SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM board", con);
-                SqlCommand cmd = new SqlCommand("dbo.UP_SelectAllBoards", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                
+
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                
+
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
                 return ds;
@@ -31,10 +35,8 @@ namespace Board
         public BoardVO SelectOne(int id)
         {
             using (SqlConnection con = new SqlConnection(connStr))
+            using (SqlCommand cmd = new SqlCommand("dbo.UP_SelectOneBoard", con))
             {
-                //string query = "SELECT * FROM board WHERE id = @id";
-                //SqlCommand cmd = new SqlCommand(query, con);
-                SqlCommand cmd = new SqlCommand("dbo.UP_SelectOneBoard", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", id);
 
@@ -64,11 +66,8 @@ namespace Board
         public bool Insert(BoardVO board)
         {
             using (SqlConnection con = new SqlConnection(connStr))
+            using (SqlCommand cmd = new SqlCommand("dbo.UP_InsertBoard", con))
             {
-                //string query = "INSERT INTO board (name, email, title, content, password) VALUES (@name, @email, @title, @content, @password)";
-                //SqlCommand cmd = new SqlCommand(query, con);
-
-                SqlCommand cmd = new SqlCommand("dbo.UP_InsertBoard", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@name", board.Name);
@@ -77,19 +76,24 @@ namespace Board
                 cmd.Parameters.AddWithValue("@content", board.Content);
                 cmd.Parameters.AddWithValue("@password", board.Password);
 
-                con.Open();
-                int rowsAffected = cmd.ExecuteNonQuery();
-                return rowsAffected > 0;
+                try
+                {
+                    con.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+                finally
+                {
+                    con.Close();
+                }
             }
         }
 
         public bool Update(BoardVO board)
         {
             using (SqlConnection con = new SqlConnection(connStr))
+            using (SqlCommand cmd = new SqlCommand("dbo.UP_UpdateBoard", con))
             {
-                //string query = "UPDATE board SET title = @title, content = @content WHERE id = @id AND password = @password";
-                //SqlCommand cmd = new SqlCommand(query, con);
-                SqlCommand cmd = new SqlCommand("dbo.UP_UpdateBoard", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@id", board.Id);
@@ -106,10 +110,8 @@ namespace Board
         public bool Delete(int id, string password)
         {
             using (SqlConnection con = new SqlConnection(connStr))
+            using (SqlCommand cmd = new SqlCommand("dbo.UP_DeleteBoard", con))
             {
-                //string query = "DELETE FROM board WHERE id = @id AND password = @password";
-                //SqlCommand cmd = new SqlCommand(query, con);
-                SqlCommand cmd = new SqlCommand("dbo.UP_DeleteBoard", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@id", id);

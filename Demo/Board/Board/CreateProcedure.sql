@@ -16,7 +16,6 @@ AS
 BEGIN
     SET NOCOUNT ON;
     
-    -- 상세 조회 시 조회수 증가 처리
     UPDATE Board SET readCount = readCount + 1 WHERE id = @id;
 
     SELECT id, name, email, title, content, password, iDate, readCount 
@@ -33,7 +32,7 @@ CREATE PROCEDURE dbo.UP_InsertBoard
     @password NVARCHAR(20)
 AS
 BEGIN
-    SET NOCOUNT ON;
+    SET NOCOUNT OFF;
     INSERT INTO Board (name, email, title, content, password)
     VALUES (@name, @email, @title, @content, @password);
 END;
@@ -64,5 +63,27 @@ BEGIN
 
     DELETE FROM Board 
     WHERE id = @id AND password = @password;
+END;
+GO
+
+CREATE PROCEDURE dbo.UP_RegisterMember
+    @userId NVARCHAR(20),
+    @password NVARCHAR(20),
+    @name NVARCHAR(10),
+    @email NVARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (SELECT 1 FROM Member WHERE userId = @userId)
+    BEGIN
+        SELECT 0 AS Result;
+    END
+    ELSE
+    BEGIN
+        INSERT INTO Member (userId, password, name, email)
+        VALUES (@userId, @password, @name, @email);
+        SELECT 1 AS Result;
+    END;
 END;
 GO

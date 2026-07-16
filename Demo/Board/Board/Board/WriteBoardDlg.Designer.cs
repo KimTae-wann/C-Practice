@@ -116,6 +116,7 @@ namespace Board
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(469, 77);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(304, 21);
             this.passwordTextBox.TabIndex = 9;
             // 
@@ -175,7 +176,7 @@ namespace Board
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.titleLabel);
             this.Name = "WriteBoardDlg";
-            this.Text = "UpdateBoardDlg";
+            this.Text = "새 글쓰기";
             this.ResumeLayout(false);
             this.PerformLayout();
 

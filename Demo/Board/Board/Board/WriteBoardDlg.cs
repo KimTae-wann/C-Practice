@@ -53,6 +53,7 @@ namespace Board
             }
             else
             {
+                MessageBox.Show(e.ToString());
                 MessageBox.Show("등록에 실패했습니다.");
             }
         }
