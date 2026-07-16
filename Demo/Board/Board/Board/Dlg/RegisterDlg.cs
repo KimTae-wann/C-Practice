@@ -34,6 +34,7 @@ namespace Board
                 return;
             }
 
+            // Validation Check
             // ID
             if (!Regex.IsMatch(userId, @"^[a-zA-Z0-9]{4,12}$"))
             {
@@ -58,8 +59,11 @@ namespace Board
                 return;
             }
 
+            // 회원가입
+            // 아이디 중복 여부 체크
             bool isSuccess = memberDac.Register(userId, password, name, email);
 
+            // 회원가입 후처리
             if (isSuccess)
             {
                 MessageBox.Show("회원가입이 정상적으로 완료되었습니다!", "성공");

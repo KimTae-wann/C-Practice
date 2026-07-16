@@ -11,22 +11,30 @@ namespace Board
 {
     class BoardDAC
     {
+        // App.Config의 connectionStrings를 저장하기 위함
         private readonly string connStr;
 
         public BoardDAC()
         {
+            // "MyBoard"에 해당하는 로컬 DB Server의 경로를 가져와서 저장
             connStr = ConfigurationManager.ConnectionStrings["MyBoard"].ConnectionString;
         }
         public DataSet SelectAllBoards()
         {
+            // SqlConnection 으로 DB Server와 연경
             using (SqlConnection con = new SqlConnection(connStr))
+            // dbo.SelectAllBoards 저장 프로시저를 사용해 DB로 보냄
             using (SqlCommand cmd = new SqlCommand("dbo.SelectAllBoards", con))
             {
+                // 타입 명시
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                // DB와 DataSet 사이에서 데이터를 채워주는 SqlDataAdapter
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
+                // 로컬 메모리
                 DataSet ds = new DataSet();
+                // adapter가 로컬 메모리에 query결과 채워줌
                 adapter.Fill(ds);
                 return ds;
             }
@@ -44,8 +52,10 @@ namespace Board
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
 
+                // 여러개 골라진 경우
                 if (ds.Tables[0].Rows.Count > 0)
                 {
+                    // 첫 번째 행만 반환
                     DataRow dr = ds.Tables[0].Rows[0];
                     return new BoardVO()
                     {
@@ -124,6 +134,7 @@ namespace Board
             }
         }
 
+        // 본인이 작성한 글인지 체크
         public bool SelfCheck(string id)
         {
             using (SqlConnection con = new SqlConnection(connStr))
@@ -134,7 +145,9 @@ namespace Board
                 cmd.Parameters.AddWithValue("@id", id);
 
                 con.Open();
+                // 선택한 글의 작성자를 가져옴
                 string userId = cmd.ExecuteScalar().ToString();
+                // 선택한 글의 작성자와 현재 로그인 된 사용자의 id가 같은 경우
                 if (UserSession.CurrentUser.UserId.Equals(userId))
                 {
                     return true;

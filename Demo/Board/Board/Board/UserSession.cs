@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Board
 {
+    // 로그인 세션을 관리하는 정적 클래스
     public static class UserSession
     {
         public static MemberVO CurrentUser { get; set; } = null;

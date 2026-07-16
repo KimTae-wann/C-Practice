@@ -60,7 +60,7 @@ namespace Board
                 DataSet ds = new DataSet();
 
                 adapter.Fill(ds);
-
+                
                 if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
                 {
                     DataRow dr = ds.Tables[0].Rows[0];

@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dlg\AddMemberDlg.cs">
+    <Compile Include="Dlg\RegisterDlg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dlg\AddMemberDlg.Designer.cs">
-      <DependentUpon>AddMemberDlg.cs</DependentUpon>
+    <Compile Include="Dlg\RegisterDlg.Designer.cs">
+      <DependentUpon>RegisterDlg.cs</DependentUpon>
     </Compile>
     <Compile Include="Board.cs">
       <SubType>Form</SubType>
@@ -90,8 +90,8 @@
     <Compile Include="Dlg\UpdateBoardDlg.Designer.cs">
       <DependentUpon>UpdateBoardDlg.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Dlg\AddMemberDlg.resx">
-      <DependentUpon>AddMemberDlg.cs</DependentUpon>
+    <EmbeddedResource Include="Dlg\RegisterDlg.resx">
+      <DependentUpon>RegisterDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Board.resx">
       <DependentUpon>Board.cs</DependentUpon>

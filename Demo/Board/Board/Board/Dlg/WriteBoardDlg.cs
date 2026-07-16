@@ -13,6 +13,8 @@ namespace Board
 {
     public partial class WriteBoardDlg : Form
     {
+        // 로그인 되지 않은 경우 Board.cs에서 걸러짐
+        // 추가할 때 로그인 된 사용자의 정보 추가
         public WriteBoardDlg()
         {
             InitializeComponent();
@@ -35,6 +37,7 @@ namespace Board
                 return;
             }
 
+            // 게시글 인스턴스 생성
             BoardVO newPost = new BoardVO()
             {
                 Title = title,
@@ -44,9 +47,11 @@ namespace Board
                 Content = content
             };
 
+            // 추가
             BoardDAC dac = new BoardDAC();
             bool isSuccess = dac.Insert(newPost);
 
+            // 추가 후처리
             if (isSuccess)
             {
                 MessageBox.Show("새 게시글이 성공적으로 등록되었습니다.", "등록 성공");

@@ -29,10 +29,13 @@ namespace Board
                 MessageBox.Show("아이디, 비밀번호를 모두 입력해주세요.");
             }
 
+            // 로그인 시도
             MemberVO loginUser = memberDac.Login(userId, password);
 
+            // 해당 유저가 있으면
             if (loginUser != null)
             {
+                // UserSession 정적 클래스에 정보 삽입
                 UserSession.CurrentUser = loginUser;
 
                 MessageBox.Show($"{loginUser.Name}님, 환영합니다!", "로그인 성공");

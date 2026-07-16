@@ -14,6 +14,7 @@ namespace Board
     public partial class UpdateBoardDlg : Form
     {
         private int boardID;
+        // 타이머
         private Timer myTimer;
         public UpdateBoardDlg()
         {
@@ -36,15 +37,18 @@ namespace Board
 
         private void InitializeMyTimer()
         {
-            myTimer = new System.Windows.Forms.Timer();
+            myTimer = new Timer();
 
+            // Tick 주기 세팅
             myTimer.Interval = 1000;
 
+            // Tick 발생 하면 델리게이터가 Timer_Tick 메서드 호출
             myTimer.Tick += new EventHandler(Timer_Tick);
 
             myTimer.Start();
         }
 
+        // 시간 반영
         private void Timer_Tick(object sender, EventArgs e)
         {
             iDateLabel.Text = DateTime.Now.ToString();
@@ -55,6 +59,7 @@ namespace Board
             
         }
 
+        // 수정
         private void updateButton_Click(object sender, EventArgs e)
         {
             string password = passwordTextBox.Text.Trim();
@@ -67,13 +72,15 @@ namespace Board
                 return;
             }
 
-            if (UserSession.CurrentUser == null)
+            // 로그인된 사용자가 없으면 수정기능 권한 없음
+            if (!UserSession.IsLoggedIn)
             {
                 MessageBox.Show("로그인하지 않은 사용자는 수정권한이 없습니다.", "권한 없음");
                 return ;
             }
             else
             {
+                // 현재 로그인된 사용자가 작성한 게시글이 아니라면 권한 없음 모달 띄움
                 if (!(UserSession.CurrentUser.Name.Equals(nameTextBox.Text) &&
                     UserSession.CurrentUser.Email.Equals(emailTextBox.Text)))
                 {
@@ -82,6 +89,7 @@ namespace Board
                 }
             }
 
+            // 로그인된 사용자가 작성한 글인 경우 게시글 인스턴스 생성
             BoardVO updatePost = new BoardVO()
             {
                 Id = this.boardID,
@@ -90,9 +98,11 @@ namespace Board
                 Password = password
             };
 
+            // 수정
             BoardDAC dac = new BoardDAC();
             bool isSuccess = dac.Update(updatePost);
 
+            // 수정 후처리
             if (isSuccess)
             {
                 MessageBox.Show("게시글이 성공적으로 수정되었습니다.", "성공");
