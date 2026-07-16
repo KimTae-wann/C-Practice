@@ -18,25 +18,33 @@ namespace Board
         {
             InitializeComponent();
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            RefreshBoardList();
-        }
 
-        private void RefreshBoardList()
+        private void LoginCheck()
         {
             // 로그인 된 경우 --> 로그아웃 Visible
             if (UserSession.IsLoggedIn)
             {
+                회원가입ToolStripMenuItem.Visible = false;
                 로그인ToolStripMenuItem.Visible = false;
                 로그아웃ToolStripMenuItem.Visible = true;
             }
             // 로그인 안 된 경우 --> 로그인 Visible
             else
             {
+                회원가입ToolStripMenuItem.Visible = true;
                 로그인ToolStripMenuItem.Visible = true;
                 로그아웃ToolStripMenuItem.Visible = false;
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            LoginCheck();
+        }
+
+        private void RefreshBoardList()
+        {
+            LoginCheck();
 
             // 마지막 select 된 currentRow 정보 저장 
             int savedRowIndex = -1;
@@ -59,6 +67,29 @@ namespace Board
                 dataGridView1.Rows[savedRowIndex].Selected = true;
             }
 
+        }
+
+        // 회원가입
+        private void 회원가입ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            registerDlg dlg = new registerDlg();
+            dlg.ShowDialog();
+        }
+
+        // 로그인
+        private void 로그인ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            loginDlg dlg = new loginDlg();
+            dlg.ShowDialog();
+            RefreshBoardList();
+        }
+
+        // 로그아웃
+        private void 로그아웃ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"{UserSession.CurrentUser.Name}님 로그아웃합니다.");
+            UserSession.Logout();
+            RefreshBoardList();
         }
 
         private void 보기ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -120,7 +151,7 @@ namespace Board
             var selectedRow = dataGridView1.CurrentRow;
             string idStr = selectedRow.Cells["id"].Value?.ToString() ?? "";
             string title = selectedRow.Cells["title"].Value?.ToString() ?? "";
-            
+
             // 본인이 작성한 글인지 확인
             bool isMine = dac.SelfCheck(idStr);
             if (!isMine)
@@ -190,29 +221,6 @@ namespace Board
             this.Close();
         }
 
-        // 회원가입
-        private void 회원가입ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            registerDlg dlg = new registerDlg();
-            dlg.ShowDialog();
-        }
 
-        // 로그인
-        private void 로그인ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            loginDlg dlg = new loginDlg();
-            dlg.ShowDialog();
-            RefreshBoardList();
-        }
-
-        // 로그아웃
-        private void 로그아웃ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show($"{UserSession.CurrentUser.Name}님 로그아웃합니다.");
-            UserSession.Logout();
-            RefreshBoardList();
-        }
-
-        
     }
 }

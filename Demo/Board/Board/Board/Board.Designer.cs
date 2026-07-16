@@ -59,9 +59,9 @@ namespace Board
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.공지사항ToolStripMenuItem,
-            this.회원가입ToolStripMenuItem,
+            this.로그아웃ToolStripMenuItem,
             this.로그인ToolStripMenuItem,
-            this.로그아웃ToolStripMenuItem});
+            this.회원가입ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -109,6 +109,7 @@ namespace Board
             // 
             // 회원가입ToolStripMenuItem
             // 
+            this.회원가입ToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.회원가입ToolStripMenuItem.Name = "회원가입ToolStripMenuItem";
             this.회원가입ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.회원가입ToolStripMenuItem.Text = "회원가입";
@@ -116,6 +117,7 @@ namespace Board
             // 
             // 로그인ToolStripMenuItem
             // 
+            this.로그인ToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.로그인ToolStripMenuItem.Name = "로그인ToolStripMenuItem";
             this.로그인ToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.로그인ToolStripMenuItem.Text = "로그인";
@@ -123,6 +125,7 @@ namespace Board
             // 
             // 로그아웃ToolStripMenuItem
             // 
+            this.로그아웃ToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.로그아웃ToolStripMenuItem.Name = "로그아웃ToolStripMenuItem";
             this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.로그아웃ToolStripMenuItem.Text = "로그아웃";

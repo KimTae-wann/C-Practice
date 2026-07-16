@@ -44,9 +44,9 @@ namespace Board
             }
 
             // 비밀번호
-            if (!Regex.IsMatch(password, @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"))
+            if (!Regex.IsMatch(password, @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$"))
             {
-                MessageBox.Show("비밀번호는 최소 8자 이상, 영문 대문자 1자, 소문자 1자를 필수로 입력하세요.", "형식 오류");
+                MessageBox.Show("비밀번호는 최소 8~20자, 영문 대문자 1자, 소문자 1자를 필수로 입력하세요.", "형식 오류");
                 passwordTextBox.Focus();
                 return;
             }

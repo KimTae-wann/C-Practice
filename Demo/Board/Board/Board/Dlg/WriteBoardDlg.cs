@@ -33,7 +33,18 @@ namespace Board
             if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(writer) ||
                 string.IsNullOrEmpty(password) || string.IsNullOrEmpty(content))
             {
-                MessageBox.Show("비밀번호, 제목, 작성자, 내용은 필수 입력 항목입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("비밀번호, 제목, 작성자, 내용은 필수 입력 항목입니다.", "주의", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (titleTextBox.Text.Length > 100)
+            {
+                MessageBox.Show("잘못된 입력값입니다. 제목을 다시 확인해주세요. (최대 100자)", "주의");
+                return;
+            }
+            if (passwordTextBox.Text.Length > 20)
+            {
+                MessageBox.Show("잘못된 입력값입니다. 비밀번호를 다시 입력해주세요. (최대 20자)", "주의");
                 return;
             }
 
@@ -61,7 +72,7 @@ namespace Board
             else
             {
                 MessageBox.Show(e.ToString());
-                MessageBox.Show("등록에 실패했습니다.");
+                MessageBox.Show("등록에 실패했습니다.", "등록 실패");
             }
         }
 

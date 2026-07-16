@@ -29,6 +29,16 @@ namespace Board
                 MessageBox.Show("아이디, 비밀번호를 모두 입력해주세요.");
             }
 
+            if (userIDTextBox.Text.Length > 20)
+            {
+                MessageBox.Show("잘못된 입력값입니다. 아이디를 다시 입력해주세요. (최대 20자)", "주의");
+                return;
+            }
+            if (passwordTextBox.Text.Length > 50)
+            {
+                MessageBox.Show("잘못된 입력값입니다. 비밀번호를 다시 입력해주세요. (최대 50자)", "주의");
+                return;
+            }
             // 로그인 시도
             MemberVO loginUser = memberDac.Login(userId, password);
 

@@ -20,6 +20,11 @@ namespace Board
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
+            if (passwordTextBox.Text.Length > 20)
+            {
+                MessageBox.Show("잘못된 입력값입니다. 비밀번호를 다시 입력해주세요. (최대 20자)", "주의");
+                return;
+            }
             InputPassword = passwordTextBox.Text;
             this.DialogResult = DialogResult.OK;
             this.Close();

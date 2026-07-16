@@ -101,6 +101,7 @@ namespace Board
             // 
             // nameTextBox
             // 
+            this.nameTextBox.Enabled = false;
             this.nameTextBox.Location = new System.Drawing.Point(74, 77);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(240, 21);
@@ -108,6 +109,7 @@ namespace Board
             // 
             // emailTextBox
             // 
+            this.emailTextBox.Enabled = false;
             this.emailTextBox.Location = new System.Drawing.Point(74, 104);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(240, 21);
