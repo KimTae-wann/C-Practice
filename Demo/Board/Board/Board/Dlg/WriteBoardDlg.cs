@@ -13,13 +13,35 @@ namespace Board
 {
     public partial class WriteBoardDlg : Form
     {
+        // 타이머
+        private Timer myTimer;
         // 로그인 되지 않은 경우 Board.cs에서 걸러짐
         // 추가할 때 로그인 된 사용자의 정보 추가
         public WriteBoardDlg()
         {
             InitializeComponent();
+            InitializeMyTimer();
             nameTextBox.Text = UserSession.CurrentUser.Name;
             emailTextBox.Text = UserSession.CurrentUser.Email;
+            iDateLabel.Text = DateTime.Now.ToString();
+        }
+        private void InitializeMyTimer()
+        {
+            myTimer = new Timer();
+
+            // Tick 주기 세팅
+            myTimer.Interval = 1000;
+
+            // Tick 발생 하면 델리게이터가 Timer_Tick 메서드 호출
+            myTimer.Tick += new EventHandler(Timer_Tick);
+
+            myTimer.Start();
+        }
+
+        // 시간 반영
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            iDateLabel.Text = DateTime.Now.ToString();
         }
 
         private void addButton_Click(object sender, EventArgs e)

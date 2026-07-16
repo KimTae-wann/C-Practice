@@ -39,6 +39,7 @@ namespace Board
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(378, 153);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(100, 21);
             this.passwordTextBox.TabIndex = 0;
             // 
@@ -71,7 +72,7 @@ namespace Board
             this.label1.TabIndex = 3;
             this.label1.Text = "비밀번호 입력";
             // 
-            // PasswordCheckForm
+            // PasswordCheckDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -80,7 +81,7 @@ namespace Board
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.passwordTextBox);
-            this.Name = "PasswordCheckForm";
+            this.Name = "PasswordCheckDlg";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
