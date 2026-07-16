@@ -1,7 +1,7 @@
 ﻿
 namespace Board
 {
-    partial class PasswordCheckForm
+    partial class PasswordCheckDlg
     {
         /// <summary>
         /// Required designer variable.

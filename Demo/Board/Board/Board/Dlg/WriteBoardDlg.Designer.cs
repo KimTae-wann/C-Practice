@@ -42,6 +42,7 @@ namespace Board
             this.contentTextBox = new System.Windows.Forms.TextBox();
             this.closeButton = new System.Windows.Forms.Button();
             this.idLabel = new System.Windows.Forms.Label();
+            this.iDateLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -157,11 +158,21 @@ namespace Board
             this.idLabel.TabIndex = 15;
             this.idLabel.Visible = false;
             // 
+            // iDateLabel
+            // 
+            this.iDateLabel.AutoSize = true;
+            this.iDateLabel.Location = new System.Drawing.Point(12, 391);
+            this.iDateLabel.Name = "iDateLabel";
+            this.iDateLabel.Size = new System.Drawing.Size(53, 12);
+            this.iDateLabel.TabIndex = 16;
+            this.iDateLabel.Text = "현재시간";
+            // 
             // WriteBoardDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.iDateLabel);
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.contentTextBox);
@@ -197,5 +208,6 @@ namespace Board
         private System.Windows.Forms.TextBox contentTextBox;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Label idLabel;
+        private System.Windows.Forms.Label iDateLabel;
     }
 }

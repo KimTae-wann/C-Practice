@@ -22,7 +22,7 @@ namespace Board
         public bool Register(string userId, string password, string name, string email)
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MYBoard"].ConnectionString))
-            using (SqlCommand command = new SqlCommand("dbo.UP_RegisterMember", con))
+            using (SqlCommand command = new SqlCommand("dbo.RegisterMember", con))
             {
                 command.CommandType = CommandType.StoredProcedure;
 
@@ -49,7 +49,7 @@ namespace Board
         public MemberVO Login(string userId, string password)
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MYBoard"].ConnectionString))
-            using (SqlCommand command = new SqlCommand("dbo.UP_Login", con))
+            using (SqlCommand command = new SqlCommand("dbo.Login", con))
             {
                 command.CommandType = CommandType.StoredProcedure;
 

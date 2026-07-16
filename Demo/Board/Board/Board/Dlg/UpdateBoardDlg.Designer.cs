@@ -144,7 +144,7 @@ namespace Board
             this.iDateLabel.Name = "iDateLabel";
             this.iDateLabel.Size = new System.Drawing.Size(53, 12);
             this.iDateLabel.TabIndex = 10;
-            this.iDateLabel.Text = "등록시간";
+            this.iDateLabel.Text = "현재시간";
             // 
             // updateButton
             // 

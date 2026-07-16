@@ -20,7 +20,7 @@ namespace Board
         public DataSet SelectAllBoards()
         {
             using (SqlConnection con = new SqlConnection(connStr))
-            using (SqlCommand cmd = new SqlCommand("dbo.UP_SelectAllBoards", con))
+            using (SqlCommand cmd = new SqlCommand("dbo.SelectAllBoards", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -35,7 +35,7 @@ namespace Board
         public BoardVO SelectOne(int id)
         {
             using (SqlConnection con = new SqlConnection(connStr))
-            using (SqlCommand cmd = new SqlCommand("dbo.UP_SelectOneBoard", con))
+            using (SqlCommand cmd = new SqlCommand("dbo.SelectOneBoard", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", id);
@@ -55,7 +55,6 @@ namespace Board
                         Title = dr["title"]?.ToString() ?? "",
                         Content = dr["content"]?.ToString() ?? "",
                         Password = dr["password"]?.ToString() ?? "",
-                        IDate = Convert.ToDateTime(dr["iDate"]),
                         ReadCount = Convert.ToInt32(dr["readCount"])
                     };
                 }
@@ -66,7 +65,7 @@ namespace Board
         public bool Insert(BoardVO board)
         {
             using (SqlConnection con = new SqlConnection(connStr))
-            using (SqlCommand cmd = new SqlCommand("dbo.UP_InsertBoard", con))
+            using (SqlCommand cmd = new SqlCommand("dbo.InsertBoard", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -75,6 +74,7 @@ namespace Board
                 cmd.Parameters.AddWithValue("@title", board.Title);
                 cmd.Parameters.AddWithValue("@content", board.Content);
                 cmd.Parameters.AddWithValue("@password", board.Password);
+                cmd.Parameters.AddWithValue("@iDate", DateTime.Now);
 
                 try
                 {
@@ -92,7 +92,7 @@ namespace Board
         public bool Update(BoardVO board)
         {
             using (SqlConnection con = new SqlConnection(connStr))
-            using (SqlCommand cmd = new SqlCommand("dbo.UP_UpdateBoard", con))
+            using (SqlCommand cmd = new SqlCommand("dbo.UpdateBoard", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -100,6 +100,7 @@ namespace Board
                 cmd.Parameters.AddWithValue("@title", board.Title);
                 cmd.Parameters.AddWithValue("@content", board.Content);
                 cmd.Parameters.AddWithValue("@password", board.Password);
+                cmd.Parameters.AddWithValue("@iDate", DateTime.Now);
 
                 con.Open();
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -110,7 +111,7 @@ namespace Board
         public bool Delete(int id, string password)
         {
             using (SqlConnection con = new SqlConnection(connStr))
-            using (SqlCommand cmd = new SqlCommand("dbo.UP_DeleteBoard", con))
+            using (SqlCommand cmd = new SqlCommand("dbo.DeleteBoard", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
 

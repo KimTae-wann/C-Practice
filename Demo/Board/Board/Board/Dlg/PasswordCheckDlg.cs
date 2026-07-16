@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Board
 {
-    public partial class PasswordCheckForm : Form
+    public partial class PasswordCheckDlg : Form
     {
         public string InputPassword { get; private set; }
-        public PasswordCheckForm()
+        public PasswordCheckDlg()
         {
             InitializeComponent();
         }

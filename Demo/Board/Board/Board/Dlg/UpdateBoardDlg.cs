@@ -14,13 +14,16 @@ namespace Board
     public partial class UpdateBoardDlg : Form
     {
         private int boardID;
+        private Timer myTimer;
         public UpdateBoardDlg()
         {
             InitializeComponent();
+            InitializeMyTimer();
         }
         public UpdateBoardDlg(string id, string title, string writer, string email, string readCount, string content, string date)
         {
             InitializeComponent();
+            InitializeMyTimer();
 
             boardID = int.Parse(id);
             titleTextBox.Text = title;
@@ -28,7 +31,23 @@ namespace Board
             emailTextBox.Text = email;
             inputReadCountLabel.Text = readCount;
             contentTextBox.Text = content;
-            iDateLabel.Text = date;
+            iDateLabel.Text = DateTime.Now.ToString();
+        }
+
+        private void InitializeMyTimer()
+        {
+            myTimer = new System.Windows.Forms.Timer();
+
+            myTimer.Interval = 1000;
+
+            myTimer.Tick += new EventHandler(Timer_Tick);
+
+            myTimer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            iDateLabel.Text = DateTime.Now.ToString();
         }
 
         private void UpdateBoardDlg_Load(object sender, EventArgs e)

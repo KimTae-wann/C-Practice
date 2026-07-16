@@ -110,7 +110,7 @@ namespace Board
                                                          MessageBoxIcon.Question);
             if (confirmResult != DialogResult.Yes) return;
 
-            PasswordCheckForm pwdForm = new PasswordCheckForm();
+            PasswordCheckDlg pwdForm = new PasswordCheckDlg();
 
             if (pwdForm.ShowDialog() == DialogResult.OK)
             {

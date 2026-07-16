@@ -47,10 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddMemberDlg.cs">
+    <Compile Include="Dlg\AddMemberDlg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddMemberDlg.Designer.cs">
+    <Compile Include="Dlg\AddMemberDlg.Designer.cs">
       <DependentUpon>AddMemberDlg.cs</DependentUpon>
     </Compile>
     <Compile Include="Board.cs">
@@ -59,48 +59,48 @@
     <Compile Include="Board.Designer.cs">
       <DependentUpon>Board.cs</DependentUpon>
     </Compile>
-    <Compile Include="BoardDAC.cs" />
-    <Compile Include="BoardVO.cs" />
-    <Compile Include="LoginDlg.cs">
+    <Compile Include="DAC\BoardDAC.cs" />
+    <Compile Include="VO\BoardVO.cs" />
+    <Compile Include="Dlg\LoginDlg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginDlg.Designer.cs">
+    <Compile Include="Dlg\LoginDlg.Designer.cs">
       <DependentUpon>LoginDlg.cs</DependentUpon>
     </Compile>
-    <Compile Include="MemberVO.cs" />
-    <Compile Include="PasswordCheckForm.cs">
+    <Compile Include="VO\MemberVO.cs" />
+    <Compile Include="Dlg\PasswordCheckDlg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PasswordCheckForm.Designer.cs">
-      <DependentUpon>PasswordCheckForm.cs</DependentUpon>
+    <Compile Include="Dlg\PasswordCheckDlg.Designer.cs">
+      <DependentUpon>PasswordCheckDlg.cs</DependentUpon>
     </Compile>
-    <Compile Include="MemberDAC.cs" />
+    <Compile Include="DAC\MemberDAC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserSession.cs" />
-    <Compile Include="WriteBoardDlg.cs">
+    <Compile Include="Dlg\WriteBoardDlg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WriteBoardDlg.Designer.cs">
+    <Compile Include="Dlg\WriteBoardDlg.Designer.cs">
       <DependentUpon>WriteBoardDlg.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateBoardDlg.cs">
+    <Compile Include="Dlg\UpdateBoardDlg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateBoardDlg.Designer.cs">
+    <Compile Include="Dlg\UpdateBoardDlg.Designer.cs">
       <DependentUpon>UpdateBoardDlg.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddMemberDlg.resx">
+    <EmbeddedResource Include="Dlg\AddMemberDlg.resx">
       <DependentUpon>AddMemberDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Board.resx">
       <DependentUpon>Board.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginDlg.resx">
+    <EmbeddedResource Include="Dlg\LoginDlg.resx">
       <DependentUpon>LoginDlg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PasswordCheckForm.resx">
-      <DependentUpon>PasswordCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Dlg\PasswordCheckDlg.resx">
+      <DependentUpon>PasswordCheckDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -111,10 +111,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="WriteBoardDlg.resx">
+    <EmbeddedResource Include="Dlg\WriteBoardDlg.resx">
       <DependentUpon>WriteBoardDlg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateBoardDlg.resx">
+    <EmbeddedResource Include="Dlg\UpdateBoardDlg.resx">
       <DependentUpon>UpdateBoardDlg.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
