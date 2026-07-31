@@ -1,0 +1,15 @@
+C:\Users\INFRAS-2606C\C#class\Prac\SPTest\SPTest\bin\Debug\SPTest.exe.config
+C:\Users\INFRAS-2606C\C#class\Prac\SPTest\SPTest\bin\Debug\SPTest.exe
+C:\Users\INFRAS-2606C\C#class\Prac\SPTest\SPTest\bin\Debug\SPTest.pdb
+C:\Users\INFRAS-2606C\C#class\Prac\SPTest\SPTest\obj\Debug\SPTest.csproj.AssemblyReference.cache
+C:\Users\INFRAS-2606C\C#class\Prac\SPTest\SPTest\obj\Debug\SPTest.MainBoard.resources
+C:\Users\INFRAS-2606C\C#class\Prac\SPTest\SPTest\obj\Debug\SPTest.Properties.Resources.resources
+C:\Users\INFRAS-2606C\C#class\Prac\SPTest\SPTest\obj\Debug\SPTest.csproj.GenerateResource.cache
+C:\Users\INFRAS-2606C\C#class\Prac\SPTest\SPTest\obj\Debug\SPTest.csproj.CoreCompileInputs.cache
+C:\Users\INFRAS-2606C\C#class\Prac\SPTest\SPTest\obj\Debug\SPTest.exe
+C:\Users\INFRAS-2606C\C#class\Prac\SPTest\SPTest\obj\Debug\SPTest.pdb
+C:\Users\INFRAS-2606C\C#class\Prac\SPTest\SPTest\obj\Debug\SPTest.Dlg.UpdateBoardDlg.resources
+C:\Users\INFRAS-2606C\C#class\Prac\SPTest\SPTest\obj\Debug\SPTest.Dlg.PasswordCheckDlg.resources
+C:\Users\INFRAS-2606C\C#class\Prac\SPTest\SPTest\obj\Debug\SPTest.Dlg.WriteBoardDlg.resources
+C:\Users\INFRAS-2606C\C#class\Prac\SPTest\SPTest\obj\Debug\SPTest.Dlg.RegisterDlg.resources
+C:\Users\INFRAS-2606C\C#class\Prac\SPTest\SPTest\obj\Debug\SPTest.Dlg.LoginDlg.resources
